@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home - Local Mandem</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+
+            .open-header {
+                background-color: #C3B1E1;
+            }
+
+            .closed-header {
+                background-color: #74a6df;
+            }
+
+            .padding-10 {
+                padding: 10px;
+            }
+
+            .padding-20 {
+                padding: 20px;
+            }
+
+            .bottom-rounded-corners {
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .rounded-corners {
+                border-radius: 10px;
+            }
+
+            .body {
+                margin: 0;
+                background-color: #F5F7FA;
+            }
+
+            .center-text {
+                text-align: center;
+            }
+
+            .header-width {
+                width: 30%;
+            }
+
+            .header-text {
+                color: white;
+                font-weight: bold;
+                font-size: 30px;
+            }
+
+            .header-sub {
+                color: #333333;
+            }
+
+            .wrapper {
+                display: flex;
+                flex-direction: column;     /* stack vertically */
+                align-items: center;        /* center horizontally */
+                height: 100vh;              /* full screen height */
+                gap: 16px;                  /* space between containers */
+            }
+
+            .container {
+                /* width: 50%; */
+                /* height: 60px; */
+                background-color: lightblue;
+                border-radius: 8px;
+                padding: 2px 0px;
+                margin: 10px 0px;
+            }
+
+            .bold-text {
+                font-weight: bold;
+            }
+
+            .padding-sides-5 {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .margin-sides-20 {
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .borders {
+                border: 2px dotted green;
+            }
+
+            .horizontal-container {
+                display: flex;
+                justify-content: center; /* or 'space-between', 'space-around', etc. */
+                align-items: center;     /* vertically centers the items */
+                gap: 20px;               /* space between items */
+                padding-bottom: 10px;
+            }
+
+            .half-width {
+                width: 50%;
+            }
+
+            .header-margins {
+                margin: 10px 0px;
+            }
+
+        </style>
+    </head>
+    <body class="body">
+
+        <div class="wrapper">
+            <!-- Header drop down box -->
+            <div id="mainContainer" onclick="toggleContainer()" class="header-width closed-header bottom-rounded-corners center-text">
+                <p class="header-text">In Crisis? <span class="header-sub">Get Help Now</span></p>
+
+                <div id="myContainer" class="hidden header-margins">
+                    <a href="tel:+1234567890" onclick="trackCall()">Test Call 1</a> <br>
+                    <a href="tel:+0987654321" onclick="trackCall()">Test Call 2</a> <br>
+                    <a href="tel:+7894561230" onclick="trackCall()">Test Call 3</a>
+                </div>
+            </div>
+
+            <img src="images/mandem_banner.jpg" alt="mandem_banner">
+
+            <span class="horizontal-container">
+
+                <span class="half-width">
+
+                    <div class="container">
+                        <!-- quote goes here -->
+                        <p class="center-text">inspiration quote</p>
+                    </div>
+
+                    <div class="container">
+                        <!-- paragraph goes here -->
+                        <p class="margin-sides-20">
+                            <span class="bold-text">About Local Mandem:</span>
+                            <br><br>
+
+                            At Local Mandem, we get it. Reaching out for mental health support isn't always easy. That's why we created a simple, discreet way to connect you and your community with the help you need, right when you need it.
+                            Our QR code stickers are more than just cool designs; they're lifelines. A quick scan instantly links to a curated list of vital mental health resources. Stick 'em anywhere, share 'em with your mandem, and let's make mental wellness accessible to everyone.
+
+                            <br><br>
+                            <span class="bold-text">Local Mandem: Making help visible, one sticker at a time.</span>
+                        </p>
+                    </div>
+
+
+                    <div class="container">
+                        <!-- social media links here -->
+                        <p class="center-text">Find us on social media</p>
+
+                        <span class="horizontal-container">
+                            <a href="https://www.instagram.com" target="_blank">
+                                <img src="images/instagram.png" alt="instagram_icon">
+                            </a>
+
+                            <a href="https://www.x.com" target="_blank">
+                                <img src="images/twitter.png" alt="twitter_icon">
+                            </a>
+
+                            <a href="https://www.youtube.com" target="_blank">
+                                <img src="images/youtube.png" alt="youtube_icon">
+                            </a>
+                        </span>
+
+                    </div>
+                </span>
+
+                 <div class="">
+                     <img class="" src="images/mandem_logo.jpg" alt="mandem_logo">
+                 </div>
+            </span>
+
+        <script>
+            let showContainer = false;
+            
+            function toggleContainer(){
+                const header = document.getElementById("mainContainer");
+                const insideHeader = document.getElementById("myContainer");
+
+                showContainer = !showContainer;
+
+                if (showContainer){
+                    insideHeader.classList.remove("hidden");
+                    header.classList.remove("closed-header");
+                    header.classList.add("open-header");
+                } else {
+                    header.classList.remove("open-header");
+                    header.classList.add("closed-header");
+                    insideHeader.classList.add("hidden");
+                }
+            }
+
+            function trackCall(){
+                console.log("Your call is tracked.")
+            }
+
+        </script>
+    </body>
+</html>
