@@ -17,8 +17,11 @@
             (window,document,'script','dataLayer','GTM-NXDMRF6N');
         </script>
         <!-- End Google Tag Manager -->
-         
+        
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home - Local Mandem</title>
+
         <style>
             .hidden {
                 display: none;
@@ -55,17 +58,14 @@
                 display: flex;
                 flex-direction: column;     /* stack vertically */
                 align-items: center;        /* center horizontally */
-                /* height: 100vh;              full screen height */
                 gap: 16px;                  /* space between containers */
             }
 
             .container {
-                /* width: 50%; */
-                /* height: 60px; */
+                font-family: Arial, Helvetica, sans-serif;
                 background-color: #add8e6;
                 border-radius: 8px;
                 padding: 4px 0px;
-                /* gap: 8px; */
                 margin: 8px 0px;
             }
 
@@ -82,15 +82,6 @@
                 border: 2px dotted green;
             }
 
-            .content-layout {
-                display: flex;
-                justify-content: center; /* or 'space-between', 'space-around', etc. */
-                align-items: center;     /* vertically centers the items */
-                gap: 20px;               /* space between items */
-                padding-bottom: 10px;
-                flex-direction: row;
-            }
-
             .main-content {
                 width: 50%;
                 margin-bottom: 16px;
@@ -100,7 +91,6 @@
                 display: flex;
                 justify-content: center;
                 gap: 20px;
-                /* padding: 4px 0px; */
                 padding-bottom: 8px;
             }
 
@@ -108,7 +98,16 @@
                 display: none;
             }
 
-            @media only screen and (max-width: 700px) {
+            .content-layout {
+                display: flex;
+                justify-content: center; /* or 'space-between', 'space-around', etc. */
+                align-items: center;     /* vertically centers the items */
+                gap: 20px;               /* space between items */
+                padding-bottom: 10px;
+                flex-direction: row;
+            }
+
+            @media (max-width: 768px) {
                 .content-layout {
                     display: flex;
                     justify-content: center; /* or 'space-between', 'space-around', etc. */
@@ -190,7 +189,7 @@
 
         <div class="wrapper">
             <!-- Header drop down box -->
-            <div id="header-container"  class="header closed-header bottom-rounded-corners center-text">
+            <div id="header-container" class="header closed-header bottom-rounded-corners center-text">
                 <p class="header-text" onclick="toggleContainer()">In Crisis? <br class="mobile-break"> <span class="header-text-2">Get Help Now</span></p>
 
                 <div id="phone-numbers" class="hidden header-padding">
@@ -208,11 +207,11 @@
 
                     <div class="container">
                         <!-- quote goes here -->
-                        <p class="center-text">inspiration quote</p>
+                        <p class="center-text">“Asking for help doesn’t mean you’re lost—it means you believe there’s a way forward.”</p>
                     </div>
 
                     <div class="container">
-                        <!-- paragraph goes here -->
+                        <!-- About Us goes here -->
                         <p class="padding-sides-24">
                             <span class="bold-text section">About Local Mandem:</span>
 
