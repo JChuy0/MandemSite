@@ -35,13 +35,31 @@
                 background-color: #74a6df;
             }
 
-            .bottom-rounded-corners {
+            .header-text {
+                color: white;
+                font-weight: bold;
+                font-size: 32px;
+            }
+
+            .header-text-2 {
+                color: #333333;
+            }
+
+            .header {
+                display: flex;
+                flex-direction: column;     /* stack vertically */
+                align-items: center;        /* center horizontally */
+                padding: 8px 48px;
+                max-width: 50%;
                 border-bottom-left-radius: 12px;
                 border-bottom-right-radius: 12px;
             }
 
-            .rounded-corners {
-                border-radius: 10px;
+            .phone {
+                display: flex;
+                flex-direction: column;     /* stack vertically */
+                gap: 1rem;
+                padding-bottom: 16px;
             }
 
             .body {
@@ -63,9 +81,9 @@
 
             .container {
                 font-family: Arial, Helvetica, sans-serif;
-                background-color: #add8e6;
+                background-color: lightgrey;
                 border-radius: 8px;
-                padding: 4px 0px;
+                padding: 4px 8px;
                 margin: 8px 0px;
             }
 
@@ -78,13 +96,27 @@
                 padding-right: 24px;
             }
 
-            .borders {
-                border: 2px dotted green;
+            .content-layout {
+                display: flex;
+                justify-content: center; /* or 'space-between', 'space-around', etc. */
+                align-items: center;     /* vertically centers the items */
+                gap: 20px;               /* space between items */
+                padding-bottom: 16px;
+                flex-direction: row;
             }
 
             .main-content {
                 width: 50%;
                 margin-bottom: 16px;
+            }
+
+            .mobile-break {
+                display: none;
+            }
+
+            .aboutUs-section {
+                display: block;
+                margin-bottom: 1rem;
             }
 
             .social-media {
@@ -94,26 +126,13 @@
                 padding-bottom: 8px;
             }
 
-            .mobile-break {
-                display: none;
-            }
-
-            .content-layout {
-                display: flex;
-                justify-content: center; /* or 'space-between', 'space-around', etc. */
-                align-items: center;     /* vertically centers the items */
-                gap: 20px;               /* space between items */
-                padding-bottom: 10px;
-                flex-direction: row;
-            }
-
             @media (max-width: 768px) {
                 .content-layout {
                     display: flex;
                     justify-content: center; /* or 'space-between', 'space-around', etc. */
                     align-items: center;     /* vertically centers the items */
                     gap: 20px;               /* space between items */
-                    padding-bottom: 10px;
+                    padding-bottom: 16px;
                     flex-direction: column-reverse;
                 }
 
@@ -138,44 +157,7 @@
                 .mobile-break {
                     display: inline;
                 }
-
             }
-
-
-            .header-width {
-                width: 30%;
-            }
-
-            .header-text {
-                color: white;
-                font-weight: bold;
-                font-size: 30px;
-            }
-
-            .header-text-2 {
-                color: #333333;
-            }
-
-            .header {
-                display: flex;
-                flex-direction: column;     /* stack vertically */
-                align-items: center;        /* center horizontally */
-                padding: 8px 16px;
-                max-width: 50%;
-            }
-
-            .phone {
-                display: flex;
-                flex-direction: column;     /* stack vertically */
-                gap: 0.5rem;
-                /* align-items: center;        center horizontally */
-            }
-
-            .section {
-                display: block;
-                margin-bottom: 1rem;
-            }
-
 
         </style>
     </head>
@@ -189,17 +171,17 @@
 
         <div class="wrapper">
             <!-- Header drop down box -->
-            <div id="header-container" class="header closed-header bottom-rounded-corners center-text">
+            <div id="header-container" class="header closed-header center-text">
                 <p class="header-text" onclick="toggleContainer()">In Crisis? <br class="mobile-break"> <span class="header-text-2">Get Help Now</span></p>
 
-                <div id="phone-numbers" class="hidden header-padding">
-                    <a href="tel:+1234567890" onclick="trackCall()" class="">Test Call 1</a>
-                    <a href="tel:+0987654321" onclick="trackCall()" class="">Test Call 2</a>
-                    <a href="tel:+7894561230" onclick="trackCall()" class="">Test Call 3</a>
+                <div id="phone-numbers" class="hidden">
+                    <a href="tel:+1234567890" class="">Test Call 1</a>
+                    <a href="tel:+0987654321" class="">Test Call 2</a>
+                    <a href="tel:+7894561230" class="">Test Call 3</a>
                 </div>
             </div>
 
-            <img src="images/mandem_banner.jpg" alt="mandem_banner" class="banner">
+            <img src="images/mandem_banner.png" alt="mandem_banner" class="banner">
 
             <span class="content-layout">
 
@@ -207,21 +189,21 @@
 
                     <div class="container">
                         <!-- quote goes here -->
-                        <p class="center-text">“Asking for help doesn’t mean you’re lost—it means you believe there’s a way forward.”</p>
+                        <p class="center-text bold-text">“Asking for help doesn’t mean you’re lost — it means you believe there’s a way forward.”</p>
                     </div>
 
                     <div class="container">
                         <!-- About Us goes here -->
                         <p class="padding-sides-24">
-                            <span class="bold-text section">About Local Mandem:</span>
+                            <span class="bold-text aboutUs-section">About Local Mandem:</span>
 
-                            <span class="section">
+                            <span class="aboutUs-section">
                                 At Local Mandem, we get it. Reaching out for mental health support isn't always easy. That's why we created a simple, discreet way to connect you and your community with the help you need, right when you need it.
                                 <br class="mobile-break"> <br class="mobile-break">
                                 Our QR code stickers are more than just cool designs; they're lifelines. A quick scan instantly links to a curated list of vital mental health resources. Stick 'em anywhere, share 'em with your mandem, and let's make mental wellness accessible to everyone.
                             </span>
 
-                            <span class="bold-text section">Local Mandem: Making help visible, one sticker at a time.</span>
+                            <span class="bold-text aboutUs-section">Local Mandem: Making help visible, one sticker at a time.</span>
                         </p>
                     </div>
 
@@ -272,10 +254,6 @@
                     header.classList.add("closed-header");
                     phoneList.classList.add("hidden");
                 }
-            }
-
-            function trackCall(){
-                console.log("Your call is tracked.")
             }
 
         </script>
