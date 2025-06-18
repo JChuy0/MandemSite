@@ -168,9 +168,38 @@
                 <p class="header-text" onclick="toggleContainer()">In Crisis? <br class="mobile-break"> <span class="header-text-2">Get Help Now</span></p>
 
                 <div id="phone-numbers" class="hidden">
-                    <a id="test1" href="tel:+1234567890" onclick="trackButtonClick('test1')" class="">Test Call 1</a>
-                    <a id="test2" href="tel:+0987654321" onclick="trackButtonClick('test2')" class="">Test Call 2</a>
-                    <a id="test3" href="tel:+7894561230" onclick="trackButtonClick('test3')" class="">Test Call 3</a>
+                    <span>
+                        Manitoba Suicide Prevention & Support Line (24/7) <br>
+                        <a href="tel:+18774357170" onclick="trackButtonClick('Manitoba Suicide Prevention & Support')">1-877-435-7170</a>
+                    </span>
+
+                    <span>
+                        Crisis Line (24/7) <br>
+                        <a href="tel:+2047868686" onclick="trackButtonClick('Crisis Line')">(204) 786-8686</a> <br>
+                        <a href="tel:+18883223019" onclick="trackButtonClick('Crisis Line')">1-888-322-3019</a>
+                    </span>
+
+                    <span>
+                        MB Farm, Rural & Northern Support Services <br>
+                        <a href="tel:+18663673276" onclick="trackButtonClick('MB Farm, Rural & Northern Support Services')">1-866-367-3276</a>
+                    </span>
+
+                    <span>
+                        Sexual Assault Crisis Line (24/7) <br>
+                        <a href="tel:+2047868631" onclick="trackButtonClick('Sexual Assault Crisis Line')">(204) 786-8631</a> <br>
+                        <a href="tel:+18882927565" onclick="trackButtonClick('Sexual Assault Crisis Line')">1-888-292-7565</a>
+                    </span>
+
+                    <span>
+                        Human Trafficking Hotline (24/7) <br>
+                        <a href="tel:+18443332211" onclick="trackButtonClick('Human Trafficking Hotline')">1-844-333-2211</a>
+                    </span>
+
+                    <span>
+                        9-8-8: Suicide Crisis Helpline <br>
+                        <a href="tel:+988" onclick="trackButtonClick('9-8-8: Suicide Crisis Helpline')">988</a>
+                    </span>
+
                 </div>
             </div>
 
@@ -255,13 +284,15 @@
                 });
             }
 
-
+            // This will grab the number from the url.
+            // The second hash represents the number of the qr code "qr1", "qr2", etc.
+            // websiteurl.com/#/qr#
             const hash = window.location.hash;
             const match = hash.match(/^#\/qr(\d+)$/);
             if (match) {
                 const qrId = match[1];
                 gtag('event', 'qr_visit', {
-                qr_id: qrId
+                    qr_id: qrId
                 });
             }
 
